@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <title>Bootstrap 5: COVID-19 Self Checker Multi-step Form</title>
+   <!-- CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+   <link href="/css/style.css" rel="stylesheet">
+   <!-- FONT -->
+   <link href="https://fonts.gstatic.com" rel="preconnect">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <div class="container d-flex align-items-center min-vh-100">
+      <div class="row g-0 justify-content-center">
+         <!-- TITLE -->
+         <div class="col-lg-4 offset-lg-1 mx-0 px-0">
+            <div id="title-container">
+               <img class="covid-image" src="/assets/img/image_1.png">
+               <h2>AAA</h2>
+               <h3>모두를 위한 자산 배분</h3>
+               <p>투자가 선택이 아닌 필수가 된 시대,
+                  투자할 시간과 전문지식이 없는 사람에게도 투자할 기회는 주어져야 합니다.
+                  우리는 모든 사람들이 다가올 미래의 삶을 준비할 수 있도록
+                  안정적이고 효율적인 투자 전략을 제공하기 위해 노력합니다.
+               </p>
+            </div>
+         </div>
+
+         <!-- FORMS -->
+         <div class="col-lg-7 mx-0 px-0">
+            <div class="progress">
+               <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50"
+                  class="progress-bar progress-bar-striped progress-bar-animated bg-orange" role="progressbar"
+                  style="width: 0%">
+               </div>
+            </div>
+            <div id="qbox-container">
+               <form class="needs-validation" id="form-wrapper" method="post" name="form-wrapper" novalidate>
+                  <!-- STEPS HERE -->
+                  <div id="steps-container">
+                     <div class="step">
+                        <h4>투자 경력이 얼마나 되시나요?</h4>
+                        <div class="form-check ps-0 q-box">
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_1_1" name="q_1" type="radio"
+                                 value="1">
+                              <label class="form-check-label question__label" for="q_1_1">1년 미만</label>
+                           </div>
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_1_2" name="q_1" type="radio"
+                                 value="2">
+                              <label class="form-check-label question__label" for="q_1_2">1년 ~ 3년</label>
+                           </div>
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_1_3" name="q_1" type="radio"
+                                 value="3">
+                              <label class="form-check-label question__label" for="q_1_3">3년 이상</label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="step">
+                        <h4>현재 보유자산은 얼마인가요?</h4>
+                        <div class="form-check ps-0 q-box">
+
+                           <div class="q-box__question">
+                              <input id="q_2_1" name="q_2" type="text" value=""> 만 원
+
+                           </div>
+                        </div>
+                     </div>
+                     <div class="step">
+                        <h4>월 저축금액은 얼마인가요?</h4>
+                        <div class="form-check ps-0 q-box">
+                           <input id="q_3_1" name="q_3" type="text" value=""> 만 원
+                        </div>
+                     </div>
+                     <div class="step">
+                        <h4>은퇴시기는 언제인가요?</h4>
+                        <div class="form-check ps-0 q-box">
+                           <input id="q_4_1" name="q_4" type="text" value=""> 년 후
+                        </div>
+                     </div>
+                     <div class="step">
+                        <h4>투자 위험 감내도는 어느 정도인가요?</h4>
+                        <div class="form-check ps-0 q-box">
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_5_1" name="q_5" type="radio"
+                                 value="1">
+                              <label class="form-check-label question__label" for="q_5_1">0 ~ 10 %</label>
+                           </div>
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_5_2" name="q_5" type="radio"
+                                 value="2">
+                              <label class="form-check-label question__label" for="q_5_2">10 ~ 20 %</label>
+                           </div>
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_5_3" name="q_5" type="radio"
+                                 value="3">
+                              <label class="form-check-label question__label" for="q_5_3">20 ~ 30 %</label>
+                           </div>
+                           <div class="q-box__question">
+                              <input class="form-check-input question__input" id="q_5_4" name="q_5" type="radio"
+                                 value="3">
+                              <label class="form-check-label question__label" for="q_5_4">30 % 이상</label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div id="success">
+                        <div class="mt-5">
+                           <h4>분석 완료!</h4>
+                           <p> 당신의 투자 성향과 보유자산을 고려한 자산 배분 포트폴리오가 구성되었습니다.</p>
+                           <a class="back-link" href="index">결과보기 ➜</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="q-box__buttons">
+                     <button id="prev-btn" type="button">이 전</button>
+                     <button id="next-btn" type="button">다 음</button>
+                     <button id="submit-btn" type="submit">제 출</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="preloader-wrapper">
+      <div id="preloader"></div>
+      <div class="preloader-section section-left"></div>
+      <div class="preloader-section section-right"></div>
+   </div>
+
+   <script src="/js/script.js"></script>
+</body>
+
+</html>
