@@ -1,0 +1,10 @@
+body{
+    background-size: cover;
+
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
