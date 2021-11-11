@@ -3,7 +3,8 @@ package com.koscom.hackathon.domain.user.api;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.koscom.hackathon.web.APIController;
+import com.koscom.hackathon.web.ApiController;
+import com.koscom.hackathon.web.WebAPIController;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ public class WebAPI {
 
     @PostConstruct
     public void init(){
-        APIController apiController=new APIController();
+        WebAPIController apiController=new WebAPIController();
         String tmpAddr="https://api.stlouisfed.org/fred/series/observations?series_id=UNRATE&api_key=615c274fe3032b0014b9ce7bda6c0751&file_type=json";
 
         String tmpBody= "";

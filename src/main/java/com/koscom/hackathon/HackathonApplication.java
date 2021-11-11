@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.Gson;
 import com.koscom.hackathon.domain.user.api.WebAPI;
-import com.koscom.hackathon.web.APIController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -79,7 +78,7 @@ public class HackathonApplication {
 
 		WebAPI webAPI = new WebAPI(SP500_MA200,unEmploymentRate_MA12,prevMonth_SP500,prevMonth_unEmploymentRate);
 
-		
+
 		System.out.println("--------------------------");
 		System.out.println("SP500 MA200: " +webAPI.getSP500_MA());
 		System.out.println("SP500 PRE: " +webAPI.getSP500_PRE());
