@@ -1,6 +1,9 @@
 package com.koscom.hackathon.web;
 
 
+import com.koscom.hackathon.domain.user.api.WebAPI;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.koscom.hackathon.config.auth.dto.SessionUser;
 
 import com.koscom.hackathon.domain.user.User;
@@ -16,7 +19,10 @@ import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
+
 public class IndexController {
+
+    private final WebAPI webAPI;
 
     private final HttpSession httpSession;
     private final UserRepository userRepository;
@@ -30,6 +36,11 @@ public class IndexController {
     @GetMapping("/index")
     public String index2(){
 
+        System.out.println("SP500 MA value:"+webAPI.getSP500_MA());
+        model.addAttribute("SP500_MA",webAPI.getSP500_MA());
+        model.addAttribute("SP500_PRE",webAPI.getSP500_PRE());
+        model.addAttribute("UNRATE_MA",webAPI.getUNRATE_MA());
+        model.addAttribute("UNRATE_PRE",webAPI.getUNRATE_PRE());
         return "index";
     }
 
