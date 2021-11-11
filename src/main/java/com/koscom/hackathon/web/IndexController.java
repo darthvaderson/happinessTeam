@@ -26,4 +26,6 @@ public class IndexController {
     public String table(){
         return "tables";
     }
+
+
 }

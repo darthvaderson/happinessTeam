@@ -7,7 +7,7 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Blue", "Red", "Yellow", "Green"],
+    labels: ["미국 대형주 ", "금", "미국 중기채", "동적운영"],
     datasets: [{
       data: [25, 25, 25, 25],
       backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
