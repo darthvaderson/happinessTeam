@@ -4,9 +4,18 @@ package com.koscom.hackathon.web;
 import com.koscom.hackathon.domain.user.api.WebAPI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.koscom.hackathon.config.auth.dto.SessionUser;
+import com.koscom.hackathon.domain.user.User;
+import com.koscom.hackathon.domain.user.UserRepository;
+import com.koscom.hackathon.web.dto.UserInfo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
@@ -14,6 +23,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
 
     private final WebAPI webAPI;
+
+    private final HttpSession httpSession;
+
 
     @GetMapping("/main")
     public String index() {
@@ -42,7 +54,9 @@ public class IndexController {
     }
 
     @GetMapping("/tables")
-    public String table(){
-        return "tables" ;
+    public String table(Model model){
+        SessionUser sessionUser = (SessionUser)httpSession.getAttribute("user");
+
+        return "tables";
     }
 }

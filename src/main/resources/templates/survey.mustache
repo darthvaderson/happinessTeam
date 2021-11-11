@@ -18,6 +18,8 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,7 +48,7 @@
                </div>
             </div>
             <div id="qbox-container">
-               <form class="needs-validation" id="form-wrapper" method="post" name="form-wrapper" novalidate>
+               <form class="needs-validation" action="/index" id="form-wrapper" method="post" name="form-wrapper" novalidate>
                   <!-- STEPS HERE -->
                   <div id="steps-container">
                      <div class="step">
@@ -72,21 +74,23 @@
                      <div class="step">
                         <h4>현재 보유자산은 얼마인가요?</h4>
                         <div class="form-check ps-0 q-box">
+
                            <div class="q-box__question">
-                              <input id="q_2_1" name="q_2" type="text" value=""> 만 원
+                              <input class="q_answer" id="q_2_1" name="q_2" type="text" value=""> 만 원
+
                            </div>
                         </div>
                      </div>
                      <div class="step">
                         <h4>월 저축금액은 얼마인가요?</h4>
                         <div class="form-check ps-0 q-box">
-                           <input id="q_3_1" name="q_3" type="text" value=""> 만 원
+                           <input class="q_answer" id="q_3_1" name="q_3" type="text" value=""> 만 원
                         </div>
                      </div>
                      <div class="step">
                         <h4>은퇴시기는 언제인가요?</h4>
                         <div class="form-check ps-0 q-box">
-                           <input id="q_4_1" name="q_4" type="text" value=""> 년 후
+                           <input class="q_answer" id="q_4_1" name="q_4" type="text" value=""> 년 후
                         </div>
                      </div>
                      <div class="step">
@@ -109,7 +113,7 @@
                            </div>
                            <div class="q-box__question">
                               <input class="form-check-input question__input" id="q_5_4" name="q_5" type="radio"
-                                 value="3">
+                                 value="4">
                               <label class="form-check-label question__label" for="q_5_4">30 % 이상</label>
                            </div>
                         </div>
@@ -126,7 +130,7 @@
                   <div id="q-box__buttons">
                      <button id="prev-btn" type="button">이 전</button>
                      <button id="next-btn" type="button">다 음</button>
-                     <button id="submit-btn" type="submit">제 출</button>
+                     <button id="submit-btn" type="submit" onclick="postUserInfo()">제 출</button>
                   </div>
                </form>
             </div>
@@ -139,7 +143,49 @@
       <div class="preloader-section section-right"></div>
    </div>
 
-   <script src="/js/script.js"></script>
+
+
 </body>
+<script>
+
+    function postUserInfo() {
+
+        var userInfo = {
+            "currentAsset" : "",
+            "annualInvest" : "",
+            "workingYear" : "",
+            "riskTolerance" : ""
+        };
+        var keys = Object.keys(userInfo);
+        var idx = 0;
+
+        $('.q_answer').each(function (index, item) {
+
+            userInfo[keys[idx++]] = item.value;
+        });
+
+        q_5_result = $('input[name=q_5]:checked').val();
+
+        userInfo[keys[idx]] = q_5_result;
+
+        $.ajax({
+            type:'post',
+            url:'/userInfo',
+            data: JSON.stringify(userInfo),
+            dataType:'JSON',
+            contentType: 'application/json',
+            success: function (result) {
+            },
+            error: function (e) {
+            }
+        });
+    }
+
+
+
+</script>
+
+
+<script src="/js/script.js"></script>
 
 </html>
