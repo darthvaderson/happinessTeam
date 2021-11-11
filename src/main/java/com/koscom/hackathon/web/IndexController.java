@@ -12,4 +12,19 @@ public class IndexController {
 
         return "index";
     }
+
+    @GetMapping("/index")
+    public String index2(){
+        return "index";
+    }
+
+    @GetMapping("/charts")
+    public String chart(){
+        return "charts";
+    }
+
+    @GetMapping("/tables")
+    public String table(){
+        return "tables";
+    }
 }
