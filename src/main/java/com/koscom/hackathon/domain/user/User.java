@@ -25,14 +25,16 @@ public class User {
     @Column
     private String picture;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role;
+    private Role role;  // DB에는 varchar 문자열로 들어가고 JPA에서 꺼낼때는 ENUM으로 매핑이 된다.
 
     @Builder
-    public User(String name, String email, String picture){
+    public User(String name, String email, String picture, Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;
+        this.role = role;
     }
 
     public User update(String name, String picture){
@@ -42,7 +44,7 @@ public class User {
         return this;
     }
 
-    public String getRole(){
-        return this.role;
+    public String getRoleKey(){
+        return this.role.getKey();
     }
 }
