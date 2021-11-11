@@ -130,7 +130,7 @@
                   <div id="q-box__buttons">
                      <button id="prev-btn" type="button">이 전</button>
                      <button id="next-btn" type="button">다 음</button>
-                     <button id="submit-btn" type="submit" onclick="temp()">제 출</button>
+                     <button id="submit-btn" type="submit" onclick="postUserInfo()">제 출</button>
                   </div>
                </form>
             </div>
@@ -143,51 +143,49 @@
       <div class="preloader-section section-right"></div>
    </div>
 
-   <script>
 
-       function temp() {
-
-           var userInfo = {
-               currentAsset : "",
-               annualInvest : "",
-               workingYear : "",
-               riskTolerance : ""
-           };
-           var idx = 0;
-
-           $('.q_answer').each(function (index, item) {
-               alert("Index:" + index + "Item Value" + item.value);
-               userInfo[idx++] = item.value;
-           });
-
-           q_5_result = $('input[name=q_5]:checked').val();
-
-           userInfo[idx] = q_5_result;
-
-           alert("Radio Res: " + q_5_result);
-           alert(userInfo);
-
-           $.ajax({
-               type: 'post',
-               url: 'http://localhost:8080/',
-               data: userInfo,
-               dataType: "json",
-               success: function (result) {
-                   alert("successfully sent");
-               },
-               error: function () {
-                   alert("error occured ");
-               }
-           });
-       }
-
-
-
-   </script>
-
-
-   <script src="/js/script.js"></script>
 
 </body>
+<script>
+
+    function postUserInfo() {
+
+        var userInfo = {
+            "currentAsset" : "",
+            "annualInvest" : "",
+            "workingYear" : "",
+            "riskTolerance" : ""
+        };
+        var keys = Object.keys(userInfo);
+        var idx = 0;
+
+        $('.q_answer').each(function (index, item) {
+
+            userInfo[keys[idx++]] = item.value;
+        });
+
+        q_5_result = $('input[name=q_5]:checked').val();
+
+        userInfo[keys[idx]] = q_5_result;
+
+        $.ajax({
+            type:'post',
+            url:'/userInfo',
+            data: JSON.stringify(userInfo),
+            dataType:'JSON',
+            contentType: 'application/json',
+            success: function (result) {
+            },
+            error: function (e) {
+            }
+        });
+    }
+
+
+
+</script>
+
+
+<script src="/js/script.js"></script>
 
 </html>

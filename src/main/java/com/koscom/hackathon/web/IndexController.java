@@ -7,9 +7,11 @@ import com.koscom.hackathon.domain.user.UserRepository;
 import com.koscom.hackathon.web.dto.UserInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +20,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final HttpSession httpSession;
-    private final UserRepository userRepository;
+
 
     @GetMapping("/main")
     public String index() {
@@ -27,16 +29,6 @@ public class IndexController {
 
     @GetMapping("/index")
     public String index2(){
-
-        return "index";
-    }
-
-    @PostMapping("/index")
-    public String index_userInfo(@RequestBody Object object){
-
-        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
-        User user = userRepository.findByEmail(sessionUser.getEmail()).orElse(null);
-
 
         return "index";
     }
@@ -52,7 +44,9 @@ public class IndexController {
     }
 
     @GetMapping("/tables")
-    public String table(){
+    public String table(Model model){
+        SessionUser sessionUser = (SessionUser)httpSession.getAttribute("user");
+
         return "tables";
     }
 

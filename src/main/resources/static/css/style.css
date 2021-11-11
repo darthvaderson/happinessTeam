@@ -76,7 +76,7 @@ label {
 /* FORMS  질문 전체 박스랑 개별 스텝 박스 양식 */
  
 #qbox-container {
-    background: url(../img/corona.png);
+    /*background: url(../img/corona.png);*/
     background-repeat: repeat;
     position: relative;
     padding: 62px;
