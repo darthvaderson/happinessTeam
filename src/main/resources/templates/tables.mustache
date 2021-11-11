@@ -16,7 +16,7 @@
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Asset Allocation <br>&ensp;&ensp;&ensp;&ensp;For All</a>
+            <a class="navbar-brand ps-3" href="index.mustache">Asset Allocation <br>&ensp;&ensp;&ensp;&ensp;For All</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -39,15 +39,15 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.mustache">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 MY AAA
                             </a>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="charts.mustache">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 시뮬레이션
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="tables.mustache">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 기대효과
                             </a>
@@ -62,33 +62,62 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">포트폴리오 시뮬레이션</h1>
+                        <h1 class="mt-4">기대효과</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                         </ol>
-                    </div>
-                    <br>
-                    
-                    <table>
-                        <tr>
-                            <td> <img src="../static/assets/img/graph1.jpg" alt=""></td>
-                            <td> <img src="../static/assets/img/graph2.JPG" alt=""></td>
-                        </tr>
-                    </table>
-                    <!--
-                    <div class="analysis_img">
-                        <img src="./assets/img/그래프1.jpg" alt="">
-                    </div>
-                    --> 
-                    <br>
-                    <br>
-                    <br>
 
-                    <h1 class="mt-4">&nbsp; 결과해석</h1>
-                    <br>
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body" style="text-align: center; font-size: 25px;">보유자산</div>
+                                    <class style="text-align: right;font-size: 20px; margin-right: 10px;">
+                                        <br>
+                                        <text>원</text>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body" style="text-align: center; font-size: 25px;">저축금액</div>
+                                    <class style="text-align: right;font-size: 20px; margin-right: 10px;">
+                                        <br>
+                                        <text>원</text>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body" style="text-align: center; font-size: 25px;">은퇴시기</div>
+                                    <class style="text-align: right;font-size: 20px; margin-right: 10px;">
+                                        <br>
+                                        <text>년</text>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body" style="text-align: center; font-size: 25px;">명목수익률</div>
+                                    <class style="text-align: right;font-size: 20px; margin-right: 10px;">
+                                        <br>
+                                        <text>%</text>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding-left:450px;font-size:40px">
+                            <text>20년 후 나의 투자자산은 <br> 10000000000원 입니다.</text>
+                            
+                        </div>
+                        <div style="padding-left: 320px;">
+                            <tr>
+                                <td><img src="../static/assets/img/porfolio_vs_interest.PNG" height="500" width="700" ></td>
+                            </tr>
+                        </div>
+                        <div style="padding-left:480px; font-size:20px">
+                            <text>*예금 자산과의 비교 시뮬레이션 결과 입니다.</text>
+                            
+                        </div>
+                    </div>
                     
-                    <h5 class="ms-5">● 최적화된 포트폴리오를 바탕으로 지난 N년간 데이터를 시뮬레이션 한 결과, 매년 N %의 수익률을 기록하였습니다.</h5>
-                    <h5 class="ms-5">● 최대 낙폭차는 xxx님의 위험감내도에 비해 낮은 -15.2%를 기록하면서, 손실 위험을 최소화할 수 있습니다.</h5>
                     
 
 
