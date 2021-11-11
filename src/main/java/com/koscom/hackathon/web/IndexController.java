@@ -34,7 +34,7 @@ public class IndexController {
     }
 
     @GetMapping("/index")
-    public String index2(){
+    public String index2(Model model){
 
         System.out.println("SP500 MA value:"+webAPI.getSP500_MA());
         model.addAttribute("SP500_MA",webAPI.getSP500_MA());
