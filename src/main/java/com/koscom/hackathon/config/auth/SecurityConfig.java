@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable()
                 .and()
                     .authorizeRequests()
-                        .antMatchers("/","/assets/*","/css/**","/images/**", "/js/**", "/h2-console/**").permitAll() // 인증없이 사용가능한 항목
+                        .antMatchers("/main","/assets/**","/css/**","/images/**", "/js/**", "/h2-console/**").permitAll() // 인증없이 사용가능한 항목
                         .antMatchers("/api/v1/**").hasRole(Role.USER.name())  // 유저 Role 가지고 있어야 사용가능 : <인가>
                         .anyRequest().authenticated()  // 이외 case는 인증만 되면 가능, <인증>
                 .and()
