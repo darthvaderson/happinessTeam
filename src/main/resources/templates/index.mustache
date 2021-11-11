@@ -13,15 +13,15 @@
     <link href="/css/styles.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
             crossorigin="anonymous"></script>
-
     <style>
         *{
-            font-family: 'Nanum Gothic', sans-serif;
+            font-family: 'OTWelcomeRA';
         }
     </style>
 </head>
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-transparent">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index">Asset Allocation <br>&ensp;&ensp;&ensp;&ensp;For All</a>
     <!-- Sidebar Toggle-->
@@ -41,12 +41,16 @@
         </li>
     </ul>
 </nav>
+
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" >
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading"></div>
+                    <!--
+                    <h2>AAA</h2>
+                    <h3>모두를 위한 자산 배분 </h3>-->
                     <a class="nav-link" href="index">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         MY AAA
@@ -81,7 +85,6 @@
                     </div>
                 </div>
                 -->
-                <br>
                 <div class="col-xl-12">
                     <div class="card mb-4">
                         <div class="card-header">
@@ -89,7 +92,6 @@
                             나의 포트폴리오
                         </div>
                         <div class="card-body">
-
                             <canvas id="myPieChart" width="40" height="10"></canvas>
                             <br>
                             <br>
