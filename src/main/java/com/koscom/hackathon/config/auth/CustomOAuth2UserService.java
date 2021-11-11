@@ -40,7 +40,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         // 로그인 성공 시 세션에 저장, 재로그인 할 필요 없는 상태로 구현
 
         return new DefaultOAuth2User(
-                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                Collections.singleton(new SimpleGrantedAuthority(user.getRole())),
                 attributes.getAttributes(),
                 attributes.getNameAttributeKey()
         );
